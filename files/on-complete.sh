@@ -1,4 +1,5 @@
 #!/bin/sh
-rclone --config=/conf/rclone.conf copy /data/_dl gdrive:rclone
-        mv /data/_dl/ /data/_waste/
-        rm -f /data/_waste/*
+if [ $2 -eq 1 ]; then
+        rclone --config=/conf/rclone.conf copy "$3" gdrive:rclone
+	rm -f "$3"
+fi
