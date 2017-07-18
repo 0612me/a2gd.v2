@@ -11,7 +11,13 @@ RUN apk update && \
 	apk add git && \
 	git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
 	apk add --update darkhttpd
-	
+RUN apk add unzip wget
+RUN wget https://downloads.rclone.org/rclone-current-linux-amd64.zip && unzip rclone-current-linux-amd64.zip && \
+	chmod 0755 ./rclone-*/rclone && \
+	cp ./rclone-*/rclone /usr/bin/ && \
+	rm -rf ./rclone-*
+
+ADD files/rclone.conf /conf-copy/rclone.conf
 ADD files/start.sh /conf-copy/start.sh
 ADD files/aria2.conf /conf-copy/aria2.conf
 ADD files/on-complete.sh /conf-copy/on-complete.sh
