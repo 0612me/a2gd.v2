@@ -1,6 +1,6 @@
 FROM alpine:3.4
 
-MAINTAINER xujinkai <jack777@xujinkai.net>
+MAINTAINER xujinkai <jack777@xuji3nkai.net>
 
 RUN apk update && \
 	apk add --no-cache --update bash && \
