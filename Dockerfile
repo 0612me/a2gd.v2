@@ -9,7 +9,7 @@ RUN apk update && \
 	mkdir -p /data && \
 	apk add --no-cache --update aria2 && \
 	apk add git && \
-	git clone https://github.com/ziahamza/webui-aria2 /aria2-webui && \
+	git clone https://github.com/binux/yaaw /aria2-webui && \
 	apk add --update darkhttpd
 
 RUN apk add unzip wget
